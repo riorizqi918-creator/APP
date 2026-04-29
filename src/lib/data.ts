@@ -2,6 +2,10 @@ import { prisma } from "@/lib/prisma";
 import { OrderStatus, ProductCategory } from "@/types";
 
 export async function getFeaturedProducts() {
+  if (!process.env.DATABASE_URL) {
+    return [];
+  }
+
   return prisma.product.findMany({
     where: { isFeatured: true },
     include: { plans: { orderBy: { price: "asc" } } },
@@ -13,6 +17,10 @@ export async function getProducts(params?: {
   category?: ProductCategory | "ALL";
   search?: string;
 }) {
+  if (!process.env.DATABASE_URL) {
+    return [];
+  }
+
   const search = params?.search?.trim();
 
   return prisma.product.findMany({
@@ -33,6 +41,10 @@ export async function getProducts(params?: {
 }
 
 export async function getProductBySlug(slug: string) {
+  if (!process.env.DATABASE_URL) {
+    return null;
+  }
+
   return prisma.product.findUnique({
     where: { slug },
     include: { plans: { orderBy: { price: "asc" } } },
