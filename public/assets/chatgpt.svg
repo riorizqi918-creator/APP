@@ -1,0 +1,13 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A2540"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="950" cy="140" r="180" fill="#93C5FD" fill-opacity="0.25"/>
+  <circle cx="220" cy="540" r="150" fill="#60A5FA" fill-opacity="0.22"/>
+  <text x="80" y="320" fill="#E2E8F0" font-family="Arial, sans-serif" font-weight="700" font-size="84">CHATGPT</text>
+  <text x="80" y="390" fill="#C7D2FE" font-family="Arial, sans-serif" font-size="40">GPT PRO • GPT PLUS • GPT HEAD</text>
+</svg>

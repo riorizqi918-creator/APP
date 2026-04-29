@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 35% 9%;
+  --foreground: 220 18% 96%;
+  --card: 223 32% 12%;
+  --card-foreground: 220 18% 96%;
+  --popover: 223 32% 12%;
+  --popover-foreground: 220 18% 96%;
+  --primary: 194 96% 56%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 252 94% 68%;
+  --secondary-foreground: 220 18% 96%;
+  --muted: 223 20% 17%;
+  --muted-foreground: 220 14% 70%;
+  --accent: 223 20% 20%;
+  --accent-foreground: 220 18% 96%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 20% 25%;
+  --input: 220 20% 25%;
+  --ring: 194 96% 56%;
+  --radius: 0.9rem;
+}
+
+.light {
+  --background: 220 30% 98%;
+  --foreground: 225 40% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 225 40% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 225 40% 12%;
+  --primary: 224 84% 54%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 196 98% 42%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 220 20% 92%;
+  --muted-foreground: 220 20% 35%;
+  --accent: 220 20% 92%;
+  --accent-foreground: 225 40% 12%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 20% 85%;
+  --input: 220 20% 85%;
+  --ring: 224 84% 54%;
+}
+
+* {
+  @apply border-border;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-background text-foreground antialiased transition-colors duration-300;
+  font-family: var(--font-manrope), sans-serif;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(124, 58, 237, 0.35), transparent 35%),
+    radial-gradient(circle at 85% 0%, rgba(56, 189, 248, 0.25), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.25), transparent 40%);
+}
+
+.light body {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(37, 99, 235, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 0%, rgba(6, 182, 212, 0.2), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(129, 140, 248, 0.15), transparent 40%);
+}

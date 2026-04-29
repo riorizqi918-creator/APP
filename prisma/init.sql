@@ -1,0 +1,64 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE IF NOT EXISTS "Product" (
+  "id" TEXT NOT NULL PRIMARY KEY,
+  "slug" TEXT NOT NULL,
+  "name" TEXT NOT NULL,
+  "description" TEXT NOT NULL,
+  "category" TEXT NOT NULL,
+  "basePrice" INTEGER NOT NULL,
+  "imageUrl" TEXT NOT NULL,
+  "isFeatured" BOOLEAN NOT NULL DEFAULT false,
+  "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "Product_slug_key" ON "Product"("slug");
+
+CREATE TABLE IF NOT EXISTS "Plan" (
+  "id" TEXT NOT NULL PRIMARY KEY,
+  "productId" TEXT NOT NULL,
+  "label" TEXT NOT NULL,
+  "price" INTEGER NOT NULL,
+  CONSTRAINT "Plan_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "Order" (
+  "id" TEXT NOT NULL PRIMARY KEY,
+  "userEmail" TEXT NOT NULL,
+  "userName" TEXT NOT NULL,
+  "whatsapp" TEXT,
+  "totalAmount" INTEGER NOT NULL,
+  "status" TEXT NOT NULL DEFAULT 'DRAFT',
+  "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "updatedAt" DATETIME NOT NULL,
+  "expiresAt" DATETIME,
+  "adminNotes" TEXT
+);
+
+CREATE TABLE IF NOT EXISTS "OrderItem" (
+  "id" TEXT NOT NULL PRIMARY KEY,
+  "orderId" TEXT NOT NULL,
+  "productId" TEXT NOT NULL,
+  "planId" TEXT NOT NULL,
+  "qty" INTEGER NOT NULL,
+  "unitPrice" INTEGER NOT NULL,
+  CONSTRAINT "OrderItem_orderId_fkey" FOREIGN KEY ("orderId") REFERENCES "Order" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT "OrderItem_productId_fkey" FOREIGN KEY ("productId") REFERENCES "Product" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT "OrderItem_planId_fkey" FOREIGN KEY ("planId") REFERENCES "Plan" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "PaymentProof" (
+  "id" TEXT NOT NULL PRIMARY KEY,
+  "orderId" TEXT NOT NULL,
+  "imageUrl" TEXT NOT NULL,
+  "uploadedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT "PaymentProof_orderId_fkey" FOREIGN KEY ("orderId") REFERENCES "Order" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS "PaymentProof_orderId_key" ON "PaymentProof"("orderId");
+
+CREATE TABLE IF NOT EXISTS "Settings" (
+  "id" INTEGER NOT NULL PRIMARY KEY,
+  "qrisImageUrl" TEXT,
+  "updatedAt" DATETIME NOT NULL
+);
