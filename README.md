@@ -2,6 +2,7 @@
   <h1 align="center">🛍️ Ryuuka Store</h1>
   <p align="center"><strong>Demo Marketplace Digital Subscription & License Voucher</strong></p>
   <p align="center">
+    <a href="https://premium-tools-hub.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-Vercel-black?style=for-the-badge&logo=vercel" alt="Live Demo"></a>
     <a href="https://github.com/riorizqi-dev/Ryuuka-Store"><img src="https://img.shields.io/github/stars/riorizqi-dev/Ryuuka-Store?style=for-the-badge&logo=github&color=gold" alt="Stars"></a>
     <a href="https://github.com/riorizqi-dev/Ryuuka-Store"><img src="https://img.shields.io/github/forks/riorizqi-dev/Ryuuka-Store?style=for-the-badge&logo=github&color=blue" alt="Forks"></a>
     <a href="https://github.com/riorizqi-dev/Ryuuka-Store"><img src="https://img.shields.io/github/issues/riorizqi-dev/Ryuuka-Store?style=for-the-badge&logo=github&color=red" alt="Issues"></a>
@@ -21,7 +22,9 @@
 
 ## 📖 About The Project
 
-**Ryuuka Store** adalah platform marketplace demo untuk penjualan produk digital seperti **subscription service**, **license voucher**, dan **akun premium** berbagai layanan populer. Dibangun dengan arsitektur modern menggunakan Next.js App Router, Ryuuka Store menawarkan pengalaman berbelanja produk digital yang mulus dari mulai menjelajahi katalog produk, memilih paket langganan, hingga menyelesaikan pembayaran menggunakan QRIS.
+**Ryuuka Store** adalah platform marketplace demo untuk penjualan produk digital seperti **subscription service**, **license voucher**, dan **akun premium** berbagai layanan populer.
+
+**Live Demo:** [https://premium-tools-hub.vercel.app](https://premium-tools-hub.vercel.app) Dibangun dengan arsitektur modern menggunakan Next.js App Router, Ryuuka Store menawarkan pengalaman berbelanja produk digital yang mulus dari mulai menjelajahi katalog produk, memilih paket langganan, hingga menyelesaikan pembayaran menggunakan QRIS.
 
 Platform ini dirancang sebagai demonstrasi lengkap dari sebuah e-commerce digital produk, mencakup halaman publik untuk pembeli dan dashboard admin untuk mengelola seluruh transaksi. Setiap fitur dibangun dengan perhatian pada detail UI/UX, mulai dari animasi transisi yang halus hingga efek visual premium yang memberikan kesan profesional pada seluruh pengalaman pengguna.
 
